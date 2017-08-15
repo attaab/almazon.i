@@ -1,0 +1,405 @@
+/*start style of container of profile page */
+.container-profile{
+	margin-top:100px;
+	height:auto;
+	width:95%;
+}
+/* alert if the product doesnt posted successfuly*/
+.container-profile .alert-success{
+	text-align:center;
+	font-size:17px;
+	width:100%;
+}
+/* style for toggling contrils pane of seller*/
+.container-profile .list-group-item{
+	padding:20px;
+	font-size:16px;
+	cursor:pointer;
+}
+ .container-profile .list-group-item i{
+	float:left;
+	font-size:23px;
+}
+.container-profile .list-group-item .badg{
+	background-color:rgb(53, 45, 45);
+	color:white;
+	font-size:16px;
+	padding:3px 8px 3px 8px;
+	border-radius:100%;
+
+}
+.container-profile .toggling-cont{
+	width:100%;
+	background-color:#fefefe;
+	height:auto;
+	display:none;
+	border:1px solid #cecece;
+	border-bottom:none;
+	border-top:none;
+}
+.container-profile .toggling-cont:last-child{
+	border-bottom:1px solid #cecece;
+}
+.container-profile .list-group .toggling-cont p{margin:0px;}
+.table-posted-products{
+	width:100%;
+	text-align:center;
+}
+/* style of control panel of product that posted by the seller */
+.table-posted-products .table-posted-products-heading{
+	border-bottom:1px solid #cecece;
+	padding:5px;
+}
+
+.table-posted-products h4{
+	display:inline-block;
+	width:18%;
+	text-align:center;
+	font-size:13px;
+	font-weight:bold;
+	height: auto;	
+}
+.table-posted-products .seller-posted-products{
+	width:100%;
+	text-align:center;
+	padding:10px;
+	margin:5px 0px 10px 0px;
+	border-bottom:1px solid #cecece;
+	height:auto;
+}
+.table-posted-products .seller-posted-products p{
+	width:18%;
+	display:inline-block;
+	font-size:14px;
+	text-align:center;
+	margin:0px;
+
+}
+.seller-posted-products p .fa-pencil-square{
+	cursor:pointer;
+	color:blue;
+}
+.seller-posted-products p .fa-times{
+	color:red;
+	cursor:pointer;
+}
+/* style of update and edit product form*/
+.table-posted-products .seller-posted-products .seller-update-product{
+	width:100%;
+	height:auto;
+	padding:10px;
+	border-top:1px solid #cecece;
+	margin-top:10px;
+	display:none;
+}
+.seller-update-product form{
+	text-align:center;
+	width:100%;
+	overflow:hidden;
+}
+.seller-edit-product-inputs {
+	display:inline-block;
+	width:60%;
+	margin:0px;
+	float:right;
+
+}
+.seller-update-product form .form-group label{
+	display:block;	
+	text-align:right;
+	padding:5px;
+	font-size:11px;
+}
+.seller-edit-product-inputs input, .seller-edit-product-inputs textarea{
+	width:90%;
+}
+.seller-edit-product-inputs textarea{
+	height:150px;
+	padding:10px;
+	text-align:right;	
+}
+.seller-edit-product-inputs .form-group .product-new-image{
+	display:none;
+}
+.seller-edit-product-inputs .product-image{
+	width:100%;
+	height:200px;
+	text-align:right;
+	padding:10px;
+}
+.seller-edit-product-inputs .product-image img{
+	width:50%;
+	height:200px;
+	cursor:pointer;
+}
+.seller-edit-product-inputs .product-image .seller-change-image{
+	background-color:black;
+	position:relative;
+	color:white;
+	padding:10px;
+	font-size:10px;
+	cursor:pointer;
+	transition:2s ease;
+	opacity:0;
+}
+.seller-edit-product-inputs .product-image:hover .seller-change-image{
+	opacity:1;
+}
+.seller-update-product form .edit-product-categories{
+	width:30%;	
+	display:inline-block;
+	margin-left:5%;
+	float:left;
+	height:auto;
+	padding:10px;
+	height:100%;
+}
+.seller-update-product form .edit-product-categories h4{
+	cursor:pointer;
+	width:100%;
+	font-size:13px;
+}
+.seller-update-product form .edit-product-categories .shake{
+	background-color:white;
+	width:60%;
+	margin:auto;
+	border:1px solid #cecece;
+	border-radius:1px;
+	text-align:right;
+	display:none;
+}
+.seller-update-product form .edit-product-categories .shake .category-name{
+	cursor:pointer;
+	padding:5px 10px 5px 10px;
+	border-bottom:1px solid #cecece;
+	width:100%;
+	transition:0.3s ease-out;
+	font-size:14px;
+	margin:0px;
+}
+.seller-update-product form .edit-product-categories .shake .category-name:hover{
+	color:orangered;
+}
+.seller-update-product form .edit-product-categories .shake .category-name span{
+	float:left;
+}
+#edit-product-category-name{
+	width:80%;
+	margin:auto;
+	border:1px solid #cecece;
+	margin:10px auto;
+	height:30px;
+	padding:5px;
+	text-align:center;
+	display:block;
+}
+.seller-update-product form .edit-product-categories .shake input{
+	display:none;
+}
+.seller-update-product form .btn-block{
+	width:150px;
+	margin:auto;
+	margin-top:20px;
+	transition:1s ease-out;
+	background-color:#cecece;
+	cursor:pointer;
+	padding:5px 10px 5px 10px;
+}
+.seller-update-product form .btn-block:hover{
+	background-color:orangered;
+	color:white;
+}
+/*form for delete a product*/
+.seller-product-delete{
+	display:none;
+}
+/* start section of post new product*/
+#cont-post-product .post-new-product{
+	padding:10px;
+	width:100%;
+	text-align:center;
+}
+#cont-post-product .post-new-product form{
+	height:auto;
+}
+#cont-post-product .post-new-product form label{
+	display:block;
+	font-size:12px;
+	text-align:right;
+}
+#cont-post-product .post-new-product form .new-product-inputs{
+	width:60%;
+	margin-left:10px;
+	display:inline-block;
+	height:auto;
+}
+#cont-post-product .post-new-product form #productTitle, #productDescription{
+	padding:3px;
+	width:100%;
+}
+
+#productDescription{
+	height:180px;
+	padding:5px;
+}
+.post-product-images{
+	height:170px;
+	text-align:right;
+}
+.post-product-images #newProductImage{
+	display:none;
+}
+.post-product-images .uploadNewProductImage{
+	color:white;
+	background-color:orangered;
+	padding:5px 15px 5px 15px;
+	margin-top:10px;
+	width:100px;
+	cursor:pointer;
+	float:right;
+} 
+.post-product-images .live-view-image{
+	height:160px;
+	width:250px;
+	display:inline-block;
+	margin-right:5%;
+}
+.live-view-image #livePreview{
+	
+	height:100%;
+}
+#cont-post-product .post-new-product form .new-product-options{
+	width:30%;	
+	display:inline-block;
+	margin-left:5%;
+	float:left;
+	height:auto;
+	padding:10px;
+}
+#cont-post-product .post-new-product form .new-product-options .new-product-options-title{
+	cursor:pointer;
+}
+#cont-post-product .post-new-product form .new-product-options .shake{
+	background-color:white;
+	width:60%;
+	margin:auto;
+	border:1px solid #cecece;
+	border-radius:1px;
+	text-align:right;
+	display:none;
+}
+.shake{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(10, 20, 40);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 10, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 10px);
+  }
+}
+#cont-post-product .post-new-product form .new-product-options .shake .new-product-option{
+	cursor:pointer;
+	padding:5px 10px 5px 10px;
+	border-bottom:1px solid #cecece;
+	width:90%;
+	margin:auto;
+	transition:0.3s ease-out;
+	font-size:14px;
+}
+#cont-post-product .post-new-product form .new-product-options .shake .new-product-option:hover{
+	color:orangered;
+}
+#cont-post-product .post-new-product form .new-product-options .shake .new-product-option span{
+	float:left;
+}
+#cont-post-product .post-new-product form .new-product-options .shake input{
+	display:none;
+}
+#cont-post-product .post-new-product form .new-product-options div.categoryName{
+	width:80%;
+	margin:auto;
+	border:1px solid #cecece;
+	margin:10px auto;
+	height:30px;
+	padding:5px;
+	text-align:center;
+	display:block;
+}
+#cont-post-product .post-new-product form .btn-block, #fake{
+	width:150px;
+	margin:auto;
+	margin-top:20px;
+	transition:1s ease-out;
+	background-color:#cecece;
+	display:none;
+	cursor:pointer;
+	padding:5px 10px 5px 10px;
+}
+#cont-post-product .post-new-product form .btn-block:hover, #fake:hover{
+	background-color:orangered;
+	color:white;
+}
+#fake{display:block;}
+.container-profile .list-group .toggling-cont .basket-items{
+	font-size:15px;
+	padding:15px;
+}
+.container-profile .list-group .toggling-cont .basket-items i{
+	float:left;
+}
+.container-profile .list-group .toggling-cont .messages{
+	padding:15px;
+}
+.container-profile .list-group .toggling-cont .messages .message{
+	float:right;
+	margin-left:40%;
+	font-size:19px;
+}
+.container-profile .list-group .toggling-cont .messages .name-message{
+	font-size:19px;
+}
+.container-profile .list-group .toggling-cont .messages .date-message{
+	float:left;
+	font-size:17px;
+}
+footer{
+	margin-bottom:0px;
+	padding-bottom:20px;
+}
+@media (max-width: 700px) {
+	.profile-panel{
+		width:100%;
+		padding:0px;
+	}
+	.container-profile{
+		width:100%;
+	}
+	.table-posted-products h4{
+		font-size:10px;
+	}
+	 .table-posted-products .seller-posted-products p{
+	 	font-size:10px;
+	 }
+}
+@media (max-width: 700px) {
+	#cont-post-product .post-new-product form .new-product-inputs, #cont-post-product .post-new-product form .new-product-options{
+		display:block;
+		width:100%;
+		float:none;
+	}
+} 

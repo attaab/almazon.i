@@ -1,0 +1,207 @@
+<!-- container of profile of user-->
+<div class="container container-fluid container-profile">
+	{{#if hasErrors}}
+		{{#each error}}
+		<div class="alert alert-danger">
+			{{this}}
+			<a href="#" data-dismiss="alert" class="close" aria-label="close"><span class="glyphicon glyphicon-remove"></span></a>
+		</div>
+		{{/each}}
+	{{/if}}
+	{{#if hasSuccess}}
+		{{#each success}}
+			<div class="alert alert-success">
+				{{this}}
+				<a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon-remove"></span></a>
+			</div>
+		{{/each}}
+	{{/if}}
+	<!--start seller panel control-->
+	<div class="container profile-panel">
+		<div class="list-group">
+			<!--this is a section of products that posted by seller-->
+ 			<p id="toggle-shared-products" class="list-group-item">منتجات تم نشرها
+ 				<i class="badg" aria-hidden="true">0</i>
+ 			</p>
+  			<div id="cont-shared-products" class="toggling-cont">
+  				<div class="table-posted-products">
+	  					<div class="table-posted-products-heading">
+	  						<h4>اسم المنتج</h4>
+	  						<h4>عددد المبيعات</h4>
+	  						<h4>تاريخ النشر</h4>
+	  						<h4>حذف</h4>
+	  						<h4>تعديل</h4>
+  						</div>
+  						{{#if product}}
+  							{{#each product}}
+  								<div class="seller-posted-products">
+  									<p>{{this.productTitle}}</p>
+  									<p>{{this.productCount}}</p>
+  									<p>{{moment this.productDate "MM/DD/YYYY"}}</p>
+  									<p><i class="fa fa-times"></i></p>
+  									<form class="seller-product-delete" method="POST" action="/seller/product/delete/{{this._id}}">
+  									<input type="submit">
+  								</form>
+  									<p><i class="fa fa-pencil-square"></i></p>
+  									<div class="seller-update-product">
+  										<h4>تعديل المنتج</h4>
+  										<form class="seller-edit-product" method="post" enctype="multipart/form-data" action="/seller/product/edit/{{this._id}}">
+  											<div class="seller-edit-product-inputs">
+												<div class="form-group">
+													<label>اسم المنتج</label>
+													<input class="form-control" type="text" name="productTitle" value="{{this.productTitle}}">
+												</div>
+												<div class="form-group">
+													<label>وصف المنتج</label>
+													<textarea class="form-control"name="productDescription">
+														{{this.productDescription}}
+													</textarea>
+												</div>
+												<div class="form-group">
+													<label>سعر المنتج</label>
+													<input class="form-control" type="text" name="productPrice" value="{{this.productPrice}}">
+												</div>
+												<div class="form-group form-image">
+													
+													<input class="form-control product-new-image" type="file" name="productImage" value="{{this.productImage}}">
+
+													<div class="product-image">
+														<img src="/{{this.productImage}}">
+														<span class="seller-change-image">تغيير الصورة</span>
+													</div>
+
+												</div>
+		  									</div>
+		  									<div class="edit-product-categories">
+		  											<h4 class="edit-product-categories-title">اختر تصنيف المنتج</h4>
+		  											<div class="shake">
+		  												<p class="category-name">لققل <span class="fa fa-check-circle">
+		  												</span>
+		  												</p>
+		  												<p class="category-name">قلقلص <span class="fa fa-check-circle"></span></p>
+				  										<p class="category-name">قلقلق <span class="fa fa-check-circle"></span></p>
+		  												<input type="text" name="productCategoryName" class="edit-product-category-name" value="{{this.productCategoryName}}" />
+				  										<div id="edit-product-category-name">
+				  											<span style="float:left;cursor:pointer" class="remove-category fa fa-times"></span>
+				  											<p style="border:none;cursor:default;padding:none;"></p>
+				  										</div>
+		  											</div>
+		  										</div>
+		  								<input type="submit" class="btn real btn-block" value="تعديل المنتج">
+  									</form>
+  								</div>
+  								
+  							</div>
+  						{{/each}}
+  					{{/if}}
+  				</div>
+  			</div>
+
+  			<!--end-->
+  			<!-- section of post new product-->
+  			<p id="toggle-post-product" class="list-group-item">نشر منتج جديد
+  			</p>
+  			<div id="cont-post-product" class="toggling-cont">
+  				<div class="post-new-product">
+  					<form method="POST" action="/seller/post" enctype="multipart/form-data">
+  						<div class="new-product-inputs">
+	  						<div class="form-group">
+	  							<label for="productTitle">اسم المنتج</label>
+	  							<input type="text" name="productTitle" class="productTitle form-control" id="productTitle" />
+	  						</div>
+	  						<div class="form-group">
+	  							<label for="productDescription">وصف المنتج</label>
+	  							<textarea type="text" name="productDescription" id="productDescription" class="productDescription form-control"></textarea>
+	  						</div>
+	  						<div class="form-group">
+	  							<label for="productPrice">سعر المنتج</label>
+	  							<input type="text" name="productPrice" id="productPrice" class="productPrice form-control"/>
+	  						</div>
+	  					</div>
+  						<div class="new-product-options">
+  						<h4 class="new-product-options-title">اختر تصنيف المنتج</h4>
+  							<div class="shake">
+  							<p class="new-product-option">لققل <span class="fa fa-check-circle"></span></p>
+  							<p class="new-product-option">قلقلص <span class="fa fa-check-circle"></span></p>
+  							<p class="new-product-option">قلقلق <span class="fa fa-check-circle"></span></p>
+  							<input type="text" name="productCategoryName" id="categoryName" />
+  							<div class="categoryName">
+  								<span style="float:left;cursor:pointer" class="remove-category fa fa-times"></span>
+  								<p style="border:none;cursor:default;padding:none;"></p>
+  							</div>
+  							</div>
+  						</div>
+  						<div class="post-product-images">
+  						<input type="file" name="productImage" id="newProductImage" accept="image/*">
+  						<span class="uploadNewProductImage">ارفع صورة</span>
+  						<div class="live-view-image">
+  							<img id="livePreview">
+  						</div>
+  						</div>
+  						<p class="" id="fake">نشر المنتج</p>
+  						<input type="submit" class="btn real btn-block" value="نشر المنتج">
+  						
+  					</form>
+  				</div>
+  			</div>
+  			<!--end-->
+  			<p class="list-group-item" id="toggle-messages">الرسائل
+  				<i class="badg" aria-hidden="true">0</i>
+  			</p>
+  			<div id="cont-messages" class="toggling-cont">
+  				<p class="messages">
+  					<a href="#" class="message">vvr</a>
+  					<a href="#" class="name-message">fefe</a>
+  					<span class="date-message">fef</span>
+  				</p>
+  			</div>
+  			<p class="list-group-item" id="toggle-credit">الرصيد
+  				<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+			</p>
+  			<div id="cont-credit" class="toggling-cont">
+  			</div>
+		</div>
+	</div>
+</div>
+<!-- FOOTER -->
+		<footer style="">
+		    <div class="container">
+		       <div class="row clearfix">
+		        	<div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		               <div class="jumbotron">
+		  					<div class="container">
+		    					<h2 class="website-logo">اسم الموقع</h2>
+							</div>
+						</div>
+		              </div>
+		              <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		                  <div class="jumbotron">
+		  					<div class="container links">
+		    					<a href="#">ماذا عنا</a>
+		    					<a href="#">الخصوصية والأمان</a>
+		  					</div>
+						</div>
+		              </div>
+		              <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		                <div class="jumbotron">
+		  					<div class="container">
+		          				<h3>اشترك ليصلك كل جديد  <i class="fa fa-envelope" aria-hidden="true"></i></h3>
+		      					<input type="email" class="form-control" placeholder="your email">
+
+		      					<div class="icons">
+		      						<h3>تابعنا</h3>
+		     		 				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+							      	</a>
+		      						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+									</a>
+		      						<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+		      						<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i>
+									</a>
+		                  		</div>
+			  				</div>
+						</div>
+		            </div>
+		        </div>
+		    </div>
+		</footer>

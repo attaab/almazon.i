@@ -1,0 +1,149 @@
+<div class="container clearfix side-menu" style="margin-top:90px;padding-top:0px">
+  <div class="container clearfix container-menu">
+    <div class="container cont-sign">
+    </div>
+    <div class="container categories">
+      <div class="category">
+        <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+        <div class="sub-category">
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+        </div>
+      </div>
+      <div class="category">
+        <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+        <div class="sub-category">
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+        </div>
+      </div>
+      <div class="category">
+        <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+        <div class="sub-category">
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+           <p><a href="#">اسم التصنيف الجانبي</a></p>
+        </div>
+      </div>
+      <div class="category">
+        <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+        <div class="sub-category">
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+          <p><a href="#">اسم التصنيف الجانبي</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container container-fluid container-signup">
+  <form class="signup" method="POST">
+    {{# if hasErrors}}
+      <div class="alert alert-danger" style="">
+        {{# each errors}}
+          {{this}}
+        {{/ each}}
+        <a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </div>
+    {{/ if}}
+    {{# if hasSuccess}}
+      <div class="alert alert-success">
+        {{# each success}}
+          {{this}}
+        {{/ each}}
+        <a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </div>
+    {{/ if}}
+    {{#if loginErrors}}
+      {{#each loginErrors}}
+        <div class="alert alert-danger" style="width:80%;margin:auto;">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </a>
+          {{msg}}
+        </div>
+      {{/ each}}
+    {{/ if}}
+    {{#if hasInfo}}
+      <div class="alert alert-info">
+        {{#each info}}
+          {{this}}
+        {{/each}}
+        <a class="close" data-dismiss="alert" aria-label="close">
+          <span class="glyphicon glyphicon-remove"></span>
+        </a>
+      </div>
+    {{/if}}
+    {{#if errors}}
+        {{#each errors}}
+          <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+            {{msg}}
+          </div>
+        {{/each}}
+      {{/if}}
+    <div class="form-group">
+      <label for="password">الايميل</label>
+      <input type="password" name="password" class="password" id="password" placeholder="كلمة المرور">
+    </div>
+    <div class="form-group">
+      <label for="confirmpassword">الايميل</label>
+      <input type="password" name="confirmpassword" class="confirmpassword" id="confirmpassword" placeholder="تأكيد كلمة المرور">
+    </div>
+    
+    <input type="submit" class="btn btn-primary submit" name="submit" value="submit">
+    
+  </form>
+</div>
+<!-- FOOTER -->
+<footer style="margin-top:87%">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+        <div class="jumbotron">
+          <div class="container">
+            <h2 class="website-logo">اسم الموقع</h2>
+          </div>
+        </div>
+      </div>
+      <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+        <div class="jumbotron">
+          <div class="container links">
+            <a href="#">ماذا عنا</a>
+            <a href="#">الخصوصية والأمان</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+        <div class="jumbotron">
+          <div class="container">
+            <h3>اشترك ليصلك كل جديد  <i class="fa fa-envelope" aria-hidden="true"></i></h3>
+            <input type="email" class="form-control" placeholder="your email">
+
+            <div class="icons">
+              <h3>تابعنا</h3>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

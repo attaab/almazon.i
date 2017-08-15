@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+        <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"  integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     <!--font awosome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- homepage stype sheet-->
+        <link rel="stylesheet" href="/stylesheets/homepage.css"/>
+        <!--style of loging and sign up forms-->
+        <link rel="stylesheet" href="/stylesheets/users/buyers/sign.css"/>
+        <link rel="stylesheet" href="/stylesheets/users/buyers/profile.css"/>
+        <link rel="stylesheet" href="/stylesheets/users/sellers/profile.css"/>
+    </head>
+<body>
+    <!-- header one-->
+<nav class="container header1 navbar navbar-fixed-top" style="margin-bottom:0px">
+    <span class="toggle-menu"><i class="fa fa-bars" aria-hidden="true"></i></span>
+    <div class="logo" style="width:20%;"> <a href="/"><img src="/images/logo.png" style="width:100%;height:100%;background-color:white;"></a></div>
+    {{#if buyerLogged}}
+    {{else if sellerLogged}}    
+    {{else}}
+    <div class="sign">
+        <li class="user-signup dropdown"> <i class="fa fa-sign-in" aria-hidden="true"></i>
+            سجل في الموقع
+         <ul class="select select-sign">
+         <li><a href="/seller/signup" class=""><i class="fa fa-sign-in" aria-hidden="true"></i> سجل كبائع</a></li>
+         <li><a href="/buyer/signup"><i class="fa fa-sign-in" aria-hidden="true"></i> سجل كمشتري</a></li>
+         </ul>
+         </li>
+        <li class="user-login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+         سجل الدخول
+         <ul class="select select-sign">
+         <li><a href="/seller/login" class=""><i class="fa fa-sign-in" aria-hidden="true"></i> سجل الدخول كبائع</a></li>
+         <li><a href="/buyer/login"><i class="fa fa-sign-in" aria-hidden="true"></i> سجل الدخول كمشتري</a></li>
+         </ul>
+         </li>
+    </div>
+    {{/if}}
+    {{#if buyerLogged}}
+        <div class="dropdown user-dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="/buyer/profile"><i class="fa fa-user" aria-hidden="true"></i> صفحتي الشخصية</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> المشتريات</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> الرسائل</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="/seller/complete">اصبح بائع</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="/buyer/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> تسجيل الخروج</a></li>
+  </ul>
+</div>
+    {{/if}}
+    {{#if sellerLogged}}
+        <div class="dropdown user-dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-user" aria-hidden="true"></i>
+
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="/seller/profile"><i class="fa fa-user" aria-hidden="true"></i> صفحتي الشخصية</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> المشتريات</a></li>
+                
+                <li role="separator" class="divider"></li>
+                <li><a href="/seller/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> تسجيل الخروج</a></li>
+            </ul>
+        </div>
+    {{/if}}
+</nav>
+<!-- sidebar toggle menu-->
+<div class="container clearfix side-menu" style="margin-top:80px;padding-top:0px">
+    <div class="container clearfix container-menu">
+        {{#if buyerLogged}}
+        <div class="container buyer-info">
+            <div class="buyer-image">
+                <img src="/{{user.profileimage}}">
+            </div>
+            <p class="buyer-name">{{user.username}}</p>
+        </div>
+        <div class="user-cont-options">
+                <p><a href="#"><i class="fa fa-user" aria-hidden="true"></i> صفحتي الشخصية</a></p>
+                <p><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> المشتريات</a></p>
+                <p><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> الرسائل</a></p>
+                
+                <p><a href="/buyer/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> تسجيل الخروج</a></p>
+            </div>
+        {{/if}}
+        {{#if sellerLogged}}
+        <div class="container buyer-info">
+            <div class="buyer-image">
+                <img src="/{{user.profileimage}}">
+            </div>
+            <p class="buyer-name">{{user.username}}</p>
+        </div>
+        <div class="user-cont-options">
+                <p><a href="#"><i class="fa fa-user" aria-hidden="true"></i> صفحتي الشخصية</a></p>
+                <p><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> المشتريات</a></p>
+                <p><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> الرسائل</a></p>
+                
+                <p><a href="/seller/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> تسجيل الخروج</a></p>
+            </div>
+            {{/if}}
+        <div class="container cont-sign">
+        </div>
+        <div class="container categories">
+            <div class="category">
+                <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+                <div class="sub-category">
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                </div>
+            </div>
+            <div class="category">
+                <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+                <div class="sub-category">
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                </div>
+            </div>
+            <div class="category">
+                <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+                <div class="sub-category">
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                </div>
+            </div>
+            <div class="category">
+                <h4 class="title-category">اسم التصنيف <span class="glyphicon glyphicon-chevron-up"></span></h4>
+                <div class="sub-category">
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                    <p><a href="#">اسم التصنيف الجانبي</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        {{# if success_msg}}
+        <div class="alert alert-danger">{{success_msg}}</div>
+        {{/ if}}
+        {{# if error_msg}}
+        <div class="alert alert-danger">{{error_msg}}</div>
+        {{/ if}}
+        {{# if erorr}}
+        <div class="alert alert-danger">{{error}}</div>
+        {{/ if}}
+
+        {{{body}}}
+        <!-- FOOTER -->
+        <!--start footer -->
+
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ 
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="/Javascripts/homepage.js"></script>
+        <script type="text/javascript" src="/Javascripts/users/buyers/profiles.js"></script>
+        <script type="text/javascript" src="/Javascripts/users/sellers/profiles.js"></script>        
+    </body>
+</html>

@@ -1,0 +1,79 @@
+/*star tstyle of container of profile page */
+.container-profile{
+	margin-top:100px;
+	height:auto;
+	width:95%;
+}
+.container-profile .alert-success{
+	text-align:center;
+	font-size:13px;
+	width:100%;
+}
+.container-profile .list-group-item{
+	padding:20px;
+	font-size:12px;
+	cursor:pointer;
+}
+ .container-profile .list-group-item i{
+	float:left;
+	font-size:13px;
+}
+.container-profile .list-group-item .badg{
+	background-color:rgb(53, 45, 45);
+	color:white;
+	font-size:10px;
+	padding:3px 8px 3px 8px;
+	border-radius:100%;
+	font-family:serif;
+}
+.container-profile .toggling-cont{
+	width:100%;
+	background-color:#fefefe;
+	height:auto;
+	display:none;
+	border:1px solid #cecece;
+	border-bottom:none;
+	border-top:none;
+}
+.container-profile .toggling-cont:last-child{
+	border-bottom:1px solid #cecece;
+}
+.container-profile .list-group .toggling-cont p{margin:0px;}
+.container-profile .list-group .toggling-cont .purchases{
+	width:100%;
+	padding:10px;
+	color:black;
+	font-size:15px;
+}
+.container-profile .list-group .toggling-cont .purchases .date-purchases{
+	float:left;
+	color:red;
+	font-size:13px;
+}
+.container-profile .list-group .toggling-cont .basket-items{
+	font-size:13px;
+	padding:15px;
+}
+.container-profile .list-group .toggling-cont .basket-items i{
+	float:left;
+	font-size:18px;
+}
+.container-profile .list-group .toggling-cont .messages{
+	padding:15px;
+}
+.container-profile .list-group .toggling-cont .messages .message{
+	float:right;
+	margin-left:40%;
+	font-size:16px;
+}
+.container-profile .list-group .toggling-cont .messages .name-message{
+	font-size:14px;
+}
+.container-profile .list-group .toggling-cont .messages .date-message{
+	float:left;
+	font-size:13px;
+}
+footer{
+	margin-bottom:0px;
+	padding-bottom:20px;
+}

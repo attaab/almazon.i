@@ -1,0 +1,326 @@
+<div class="container clearfix container-fluid container-search">
+	<div class="search-box">
+		<form>
+			<input type="search" name="search">
+		</form>
+	</div>
+</div>
+<!-- start container of slider-->
+<div class="container container-fluid slider-cont">
+	<div class="row slider-row">
+		<div class="col-xs-12 slides cont-slide">
+			<div id="imagecarousel" class="carousel slide slides" data-wrap="flase" data-pause="flase" data-ride="carousel" data-interval="2000000">
+				<div class="carousel-inner slides">
+					<div class="item active slides">
+						<div class="row slides">
+							{{#if product1}}
+								{{#each product1}}
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 container-product">
+										<div class="slide-inner">
+											<h3 class="title-slide">{{this.productTitle}}</h3>
+											<img src="{{this.productImage}}" class="img-responsive" />
+											<div class=" slide-price-btn">
+												<p>{{this.productPrice}}</p>
+												<p class="slide-btn"><a href="/product/{{this._id}}">اشتري الأن</a></p>
+											</div>
+										</div>
+									</div>
+								{{/each}}
+							{{/if}}	
+						</div>
+					</div>
+					<div class="item slides">
+						<div class="row slides">
+							{{#if product2}}
+								{{#each product2}}
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 container-product">
+										<div class="slide-inner">
+											<h3 class="title-slide">{{this.productTitle}}</h3>
+											<img src="{{this.productImage}}" class="img-responsive" />
+											<div class=" slide-price-btn">
+												<p>{{this.productPrice}}</p>
+												<p class="slide-btn"><a href="#">اشتري الأن</a></p>
+											</div>
+										</div>
+									</div>
+								{{/each}}
+							{{/if}}	
+						</div>
+					</div>		
+					<div class="item slides">
+						<div class="row slides">
+							{{#if product3}}
+								{{#each product3}}
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 container-product">
+										<div class="slide-inner">
+											<h3 class="title-slide">{{this.productTitle}}</h3>
+											<img src="{{this.productImage}}" class="img-responsive" />
+											<div class=" slide-price-btn">
+												<p>{{this.productPrice}}</p>
+												<p class="slide-btn"><a href="#">اشتري الأن</a></p>
+											</div>
+										</div>
+									</div>
+								{{/each}}
+							{{/if}}	
+						</div>
+					</div>		
+				<div class="item slides">
+						<div class="row slides">
+							{{#if product4}}
+								{{#each product4}}
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 container-product">
+										<div class="slide-inner">
+											<h3 class="title-slide">{{this.productTitle}}</h3>
+											<img src="{{this.productImage}}" class="img-responsive" />
+											<div class=" slide-price-btn">
+												<p>{{this.productPrice}}</p>
+												<p class="slide-btn"><a href="#">اشتري الأن</a></p>
+											</div>
+										</div>
+									</div>
+								{{/each}}
+							{{/if}}	
+						</div>
+					</div>		
+				</div>
+				<a href="#imagecarousel" class="carousel-control left" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a href="#imagecarousel" class="carousel-control right" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end container-slider -->
+<!--start container of new products-->
+<div class="container container-fluid container-new-products">
+	{{#if products}}
+		<div class="row row-new-products">
+			{{#each products}}
+				<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 product">
+					<div class="new-product">
+						<img src= "{{this.productImage}}" />
+						<div class="new-product-overlay">
+							<span class="new-product-buy-btn"><i class="fa fa-shopping-cart"></i> <a href="#">اشتري الأن</a></span>
+							<span class="new-product-add-cart"><i class="fa fa-shopping-basket"></i> <a href="#">أضف إلى السلة</a></span>
+						</div>
+						<h3 class="title-product">{{this.productTitle}}</h3>
+						<div class="new-product-price clearfix">
+							<span class="price">{{this.productPrice}}</span>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{/if}}
+</div>
+<!--end container of new product-->
+<!--start container of engineers-->
+<div class="container container-engineers container-fluid">
+	<h3 class="title-engineers-container">مهندسي الديكور</h3>
+	<div class="toggle-engineers">
+		<span><i class="fa fa-arrow-right arr-right"></i></span>
+		<span><i class="fa fa-arrow-left"></i></span>
+	</div>
+	<div class="row row-engineers act1">
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person1.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person5.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person3.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person4.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row row-engineers">
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person2.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person6.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person7.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person8.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row row-engineers">
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person1.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person6.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person7.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person8.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row row-engineers">
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person8.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person6.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person7.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 container-engineer">
+			<div class="cont-engineer">
+				<img src="/images/person8.jpg">
+				<div class="engineer-info">
+					<h4 class="engineer-name">اسم المهندس</h4>
+					<a href="#" class="engineer-btn">معرض الأعمال</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--end container of engineers-->
+
+<!--start footer -->
+<!-- FOOTER -->
+  		<!-- FOOTER -->
+		<footer style="">
+		    <div class="container">
+		       <div class="row clearfix">
+		        	<div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		               <div class="jumbotron">
+		  					<div class="container">
+		    					<h2 class="website-logo">اسم الموقع</h2>
+							</div>
+						</div>
+		              </div>
+		              <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		                  <div class="jumbotron">
+		  					<div class="container links">
+		    					<a href="#">ماذا عنا</a>
+		    					<a href="#">الخصوصية والأمان</a>
+		  					</div>
+						</div>
+		              </div>
+		              <div class="footer-sections col-sm-6 col-md-4 col-xs-12 col-lg-4 clearfix">
+		                <div class="jumbotron">
+		  					<div class="container">
+		          				<h3>اشترك ليصلك كل جديد  <i class="fa fa-envelope" aria-hidden="true"></i></h3>
+		      					<input type="email" class="form-control" placeholder="your email">
+
+		      					<div class="icons">
+		      						<h3>تابعنا</h3>
+		     		 				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+							      	</a>
+		      						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i>
+									</a>
+		      						<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+		      						<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i>
+									</a>
+		                  		</div>
+			  				</div>
+						</div>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
