@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var random = require("mongoose-random");
 var Schema = mongoose.Schema;
-mongoose.connect("mongodb://<almazon>:<almazon1>@ds145183.mlab.com:45183/almazon");
+mongoose.connect("mongodb://almazon:almazon1@ds145183.mlab.com:45183/almazon");
 var productSchema = new Schema({
 	productTitle: {type:String, required: true},
 	productDescription: {type: String, required: true},

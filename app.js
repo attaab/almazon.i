@@ -19,7 +19,7 @@ var mongodb = require("mongodb");
 var emailCheck = require("email-check");
 var MongoStore = require("connect-mongo")(session);
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://<almazon>:<alamzon1>@ds145183.mlab.com:45183/almazon");
+mongoose.connect("mongodb://almazon:alamzon1@ds145183.mlab.com:45183/almazon");
 var db = mongoose.connection;
 
 var mongooseDelete = require("mongoose-delete");
@@ -110,4 +110,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+/*giving the app a port to listen t0*/
+var port = process.env.PORT || 3000;
+/*end of giving the app a port to listen to */
+
+app.listen(port, function () {
+  console.log('s3rv3r @#$% on: ' + process.env.PORT + "|| 3000");
+});
